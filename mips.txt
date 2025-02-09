@@ -1,0 +1,472 @@
+.data
+formate0: .asciiz ", "
+formate1: .asciiz ", "
+formate2: .asciiz "\n"
+.align 2
+v0b: .space 4
+.text
+li $t1 4
+la $t2 v0b
+sw $t1 0($t2)
+j func_main
+func_hhh:
+sub $t1 $sp 0
+lw $t1 0($t1)
+sub $t2 $sp 0
+lw $t2 0($t2)
+mul $t0 $t1 $t2
+sub $t2 $sp 8
+sw $t0 0($t2)
+sub $t1 $sp 8
+lw $t1 0($t1)
+sub $t2 $sp 4
+sw $t1 0($t2)
+sub $t1 $sp 0
+lw $t1 0($t1)
+li $t2 1
+sub $t0 $t1 $t2
+sltiu $t0 $t0 1
+sub $t2 $sp 12
+sw $t0 0($t2)
+sub $t1 $sp 12
+lw $t1 0($t1)
+beq $0 $t1 lab_afal_2
+j lab_tru_1
+lab_afal_2:
+j lab_fal_0
+lab_tru_1:
+li $t1 1
+move $v0 $t1 
+jr $31 
+lab_fal_0:
+sub $t1 $sp 0
+lw $t1 0($t1)
+li $t2 2
+sub $t0 $t1 $t2
+sltiu $t0 $t0 1
+sub $t2 $sp 16
+sw $t0 0($t2)
+sub $t1 $sp 16
+lw $t1 0($t1)
+beq $0 $t1 lab_afal_5
+j lab_tru_4
+lab_afal_5:
+j lab_fal_3
+lab_tru_4:
+li $t1 2
+move $v0 $t1 
+jr $31 
+lab_fal_3:
+sub $t1 $sp 4
+lw $t1 0($t1)
+sub $t2 $sp 4
+lw $t2 0($t2)
+mul $t0 $t1 $t2
+sub $t2 $sp 20
+sw $t0 0($t2)
+sub $t1 $sp 20
+lw $t1 0($t1)
+li $t2 10
+div $t1 $t2
+mfhi $t0
+sub $t2 $sp 24
+sw $t0 0($t2)
+sub $t1 $sp 24
+lw $t1 0($t1)
+sub $t2 $sp 4
+sw $t1 0($t2)
+sub $t1 $sp 0
+lw $t1 0($t1)
+li $t2 1
+sub $t0 $t1 $t2
+sub $t2 $sp 28
+sw $t0 0($t2)
+sub $t1 $sp 28
+lw $t1 0($t1)
+sub $t0 $sp 36
+sw $t1 0($t0)
+sub $t1 $sp 32
+sw $ra 0($t1)
+sub $sp $sp 36
+jal func_hhh
+add $sp $sp 36
+sub $ra $sp 32
+lw $ra 0($ra)
+sub $t1 $sp 36
+sw $v0 0($t1)
+sub $t1 $sp 0
+lw $t1 0($t1)
+li $t2 2
+sub $t0 $t1 $t2
+sub $t2 $sp 40
+sw $t0 0($t2)
+sub $t1 $sp 40
+lw $t1 0($t1)
+sub $t0 $sp 48
+sw $t1 0($t0)
+sub $t1 $sp 44
+sw $ra 0($t1)
+sub $sp $sp 48
+jal func_hhh
+add $sp $sp 48
+sub $ra $sp 44
+lw $ra 0($ra)
+sub $t1 $sp 48
+sw $v0 0($t1)
+sub $t1 $sp 36
+lw $t1 0($t1)
+sub $t2 $sp 48
+lw $t2 0($t2)
+add $t0 $t1 $t2
+sub $t2 $sp 52
+sw $t0 0($t2)
+sub $t1 $sp 52
+lw $t1 0($t1)
+move $v0 $t1 
+jr $31 
+jr $31
+func_main:
+li $t1 2
+sub $t2 $sp 0
+sw $t1 0($t2)
+li $t1 5
+sub $t2 $sp 4
+sw $t1 0($t2)
+li $v0 5
+syscall
+sub $t1 $sp 0
+sw $v0 0($t1)
+li $v0 5
+syscall
+sub $t1 $sp 4
+sw $v0 0($t1)
+li $t1 7
+li $t2 5923
+mul $t0 $t1 $t2
+sub $t2 $sp 8
+sw $t0 0($t2)
+sub $t1 $sp 8
+lw $t1 0($t1)
+li $t2 56
+div $t0 $t1 $t2
+sub $t2 $sp 12
+sw $t0 0($t2)
+sub $t1 $sp 12
+lw $t1 0($t1)
+li $t2 56
+mul $t0 $t1 $t2
+sub $t2 $sp 16
+sw $t0 0($t2)
+li $t1 3
+sub $t0 $sp 24
+sw $t1 0($t0)
+sub $t1 $sp 20
+sw $ra 0($t1)
+sub $sp $sp 24
+jal func_hhh
+add $sp $sp 24
+sub $ra $sp 20
+lw $ra 0($ra)
+sub $t1 $sp 24
+sw $v0 0($t1)
+sub $t1 $sp 24
+lw $t1 0($t1)
+sub $t0 $sp 32
+sw $t1 0($t0)
+sub $t1 $sp 28
+sw $ra 0($t1)
+sub $sp $sp 32
+jal func_hhh
+add $sp $sp 32
+sub $ra $sp 28
+lw $ra 0($ra)
+sub $t1 $sp 32
+sw $v0 0($t1)
+sub $t1 $sp 16
+lw $t1 0($t1)
+sub $t2 $sp 32
+lw $t2 0($t2)
+sub $t0 $t1 $t2
+sub $t2 $sp 36
+sw $t0 0($t2)
+li $t1 1
+li $t2 2
+add $t0 $t1 $t2
+sub $t2 $sp 40
+sw $t0 0($t2)
+li $t1 89
+li $t2 2
+div $t0 $t1 $t2
+sub $t2 $sp 44
+sw $t0 0($t2)
+sub $t1 $sp 44
+lw $t1 0($t1)
+li $t2 36
+mul $t0 $t1 $t2
+sub $t2 $sp 48
+sw $t0 0($t2)
+sub $t1 $sp 48
+lw $t1 0($t1)
+li $t2 53
+sub $t0 $t1 $t2
+sub $t2 $sp 52
+sw $t0 0($t2)
+sub $t1 $sp 52
+lw $t1 0($t1)
+li $t2 1
+div $t0 $t1 $t2
+sub $t2 $sp 56
+sw $t0 0($t2)
+sub $t1 $sp 56
+lw $t1 0($t1)
+li $t2 6
+mul $t0 $t1 $t2
+sub $t2 $sp 60
+sw $t0 0($t2)
+sub $t1 $sp 40
+lw $t1 0($t1)
+sub $t2 $sp 60
+lw $t2 0($t2)
+sub $t0 $t1 $t2
+sub $t2 $sp 64
+sw $t0 0($t2)
+li $t1 45
+li $t2 56
+mul $t0 $t1 $t2
+sub $t2 $sp 68
+sw $t0 0($t2)
+sub $t1 $sp 68
+lw $t1 0($t1)
+li $t2 85
+div $t0 $t1 $t2
+sub $t2 $sp 72
+sw $t0 0($t2)
+sub $t1 $sp 72
+lw $t1 0($t1)
+li $t2 56
+sub $t0 $t1 $t2
+sub $t2 $sp 76
+sw $t0 0($t2)
+li $t1 35
+li $t2 56
+mul $t0 $t1 $t2
+sub $t2 $sp 80
+sw $t0 0($t2)
+sub $t1 $sp 80
+lw $t1 0($t1)
+li $t2 4
+div $t0 $t1 $t2
+sub $t2 $sp 84
+sw $t0 0($t2)
+sub $t1 $sp 76
+lw $t1 0($t1)
+sub $t2 $sp 84
+lw $t2 0($t2)
+add $t0 $t1 $t2
+sub $t2 $sp 88
+sw $t0 0($t2)
+sub $t1 $sp 88
+lw $t1 0($t1)
+li $t2 9
+sub $t0 $t1 $t2
+sub $t2 $sp 92
+sw $t0 0($t2)
+li $t1 2
+sub $t2 $sp 92
+lw $t2 0($t2)
+mul $t0 $t1 $t2
+sub $t2 $sp 96
+sw $t0 0($t2)
+sub $t1 $sp 64
+lw $t1 0($t1)
+sub $t2 $sp 96
+lw $t2 0($t2)
+sub $t0 $t1 $t2
+sub $t2 $sp 100
+sw $t0 0($t2)
+sub $t1 $sp 36
+lw $t1 0($t1)
+sub $t2 $sp 100
+lw $t2 0($t2)
+add $t0 $t1 $t2
+sub $t2 $sp 104
+sw $t0 0($t2)
+sub $t1 $sp 104
+lw $t1 0($t1)
+sub $t2 $sp 4
+sw $t1 0($t2)
+li $t1 0
+li $t2 5
+sub $t0 $t1 $t2
+sub $t2 $sp 112
+sw $t0 0($t2)
+li $t1 0
+sub $t2 $sp 112
+lw $t2 0($t2)
+add $t0 $t1 $t2
+sub $t2 $sp 116
+sw $t0 0($t2)
+li $t1 0
+sub $t2 $sp 116
+lw $t2 0($t2)
+sub $t0 $t1 $t2
+sub $t2 $sp 120
+sw $t0 0($t2)
+sub $t1 $sp 120
+lw $t1 0($t1)
+sub $t2 $sp 108
+sw $t1 0($t2)
+li $t1 10
+sub $t2 $sp 124
+sw $t1 0($t2)
+sub $t1 $sp 108
+lw $t1 0($t1)
+sub $t2 $sp 108
+lw $t2 0($t2)
+mul $t0 $t1 $t2
+sub $t2 $sp 128
+sw $t0 0($t2)
+sub $t1 $sp 128
+lw $t1 0($t1)
+sub $t2 $sp 108
+lw $t2 0($t2)
+mul $t0 $t1 $t2
+sub $t2 $sp 132
+sw $t0 0($t2)
+sub $t1 $sp 132
+lw $t1 0($t1)
+sub $t2 $sp 108
+lw $t2 0($t2)
+mul $t0 $t1 $t2
+sub $t2 $sp 136
+sw $t0 0($t2)
+sub $t1 $sp 136
+lw $t1 0($t1)
+sub $t2 $sp 108
+lw $t2 0($t2)
+mul $t0 $t1 $t2
+sub $t2 $sp 140
+sw $t0 0($t2)
+sub $t1 $sp 140
+lw $t1 0($t1)
+sub $t2 $sp 108
+lw $t2 0($t2)
+mul $t0 $t1 $t2
+sub $t2 $sp 144
+sw $t0 0($t2)
+sub $t1 $sp 124
+lw $t1 0($t1)
+sub $t2 $sp 144
+lw $t2 0($t2)
+slt $t0 $t1 $t2
+sub $t2 $sp 148
+sw $t0 0($t2)
+sub $t1 $sp 148
+lw $t1 0($t1)
+beq $0 $t1 lab_afal_9
+j lab_lpbe_7
+lab_afal_9:
+j lab_end_6
+lab_lpbe_7:
+la $t1 v0b
+lw $t1 0($t1)
+la $t2 v0b
+lw $t2 0($t2)
+mul $t0 $t1 $t2
+sub $t2 $sp 152
+sw $t0 0($t2)
+sub $t1 $sp 152
+lw $t1 0($t1)
+li $t2 10000
+div $t1 $t2
+mfhi $t0
+sub $t2 $sp 156
+sw $t0 0($t2)
+sub $t1 $sp 156
+lw $t1 0($t1)
+la $t2 v0b
+sw $t1 0($t2)
+sub $t1 $sp 124
+lw $t1 0($t1)
+li $t2 1
+add $t0 $t1 $t2
+sub $t2 $sp 160
+sw $t0 0($t2)
+sub $t1 $sp 160
+lw $t1 0($t1)
+sub $t2 $sp 124
+sw $t1 0($t2)
+lab_lpbe_8:
+sub $t1 $sp 108
+lw $t1 0($t1)
+sub $t2 $sp 108
+lw $t2 0($t2)
+mul $t0 $t1 $t2
+sub $t2 $sp 164
+sw $t0 0($t2)
+sub $t1 $sp 164
+lw $t1 0($t1)
+sub $t2 $sp 108
+lw $t2 0($t2)
+mul $t0 $t1 $t2
+sub $t2 $sp 168
+sw $t0 0($t2)
+sub $t1 $sp 168
+lw $t1 0($t1)
+sub $t2 $sp 108
+lw $t2 0($t2)
+mul $t0 $t1 $t2
+sub $t2 $sp 172
+sw $t0 0($t2)
+sub $t1 $sp 172
+lw $t1 0($t1)
+sub $t2 $sp 108
+lw $t2 0($t2)
+mul $t0 $t1 $t2
+sub $t2 $sp 176
+sw $t0 0($t2)
+sub $t1 $sp 176
+lw $t1 0($t1)
+sub $t2 $sp 108
+lw $t2 0($t2)
+mul $t0 $t1 $t2
+sub $t2 $sp 180
+sw $t0 0($t2)
+sub $t1 $sp 124
+lw $t1 0($t1)
+sub $t2 $sp 180
+lw $t2 0($t2)
+slt $t0 $t1 $t2
+sub $t2 $sp 184
+sw $t0 0($t2)
+sub $t1 $sp 184
+lw $t1 0($t1)
+beq $0 $t1 lab_afal_10
+j lab_lpbe_7
+lab_afal_10:
+j lab_end_6
+lab_end_6:
+sub $a0 $sp 0
+lw $a0 0($a0)
+li $v0 1
+syscall
+li $v0 4
+la $a0 formate0
+syscall
+sub $a0 $sp 4
+lw $a0 0($a0)
+li $v0 1
+syscall
+li $v0 4
+la $a0 formate1
+syscall
+sub $a0 $sp 108
+lw $a0 0($a0)
+li $v0 1
+syscall
+li $v0 4
+la $a0 formate2
+syscall
+j end_zpqm
+j end_zpqm
+end_zpqm:
